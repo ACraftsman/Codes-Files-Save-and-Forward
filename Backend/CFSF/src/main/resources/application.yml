@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cfsf
+  datasource:
+    url: jdbc:mysql://localhost:3306/cfsf
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ${DB_PASSWORD}
+cfsf:
+    jwt:
+        secret: Codes-Files-Save-and-Forward
+        expiration: 604800
+#    cors:
+#        allowedOrigins: "*"
+#        allowedMethods: "*"
+#        allowedHeaders: "*"
+#        exposedHeaders: "Authorization
