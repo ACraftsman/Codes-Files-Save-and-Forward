@@ -26,14 +26,13 @@ public class UserController {
         if (userService.findByUserName(username) != null) {
             return Result.error("已存在该用户");
         } else {
-            int _ifSuccess = userService.register(username, password);
-            if (_ifSuccess == -1) {
+            int _userId = userService.register(username, password);
+            if (_userId == -1) {
                 return Result.error("注册失败");
             }else{
-                User user = userService.findByUserName(username);
                 HashMap<String, Object> _claims = new HashMap<>();
-                _claims.put("username", user.getUsername());
-                _claims.put("id", user.getId());
+                _claims.put("username", username);
+                _claims.put("id", _userId);
                 String _token = createToken(_claims);
                 return Result.success("注册成功",_token);
             }
