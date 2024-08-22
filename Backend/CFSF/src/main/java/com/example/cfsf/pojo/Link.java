@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class Link {
-    private int id;
+    private Integer id;
     private int shareId;
     private String shareCode;
     private LocalDateTime createTime;

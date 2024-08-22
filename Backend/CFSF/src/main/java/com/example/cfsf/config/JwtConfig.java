@@ -1,9 +1,10 @@
 package com.example.cfsf.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Component
+@Configuration
 public class JwtConfig {
     private static String secret;
     private static Long expiration;
