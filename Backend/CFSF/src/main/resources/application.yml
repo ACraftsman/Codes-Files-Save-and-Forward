@@ -6,10 +6,21 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${DB_PASSWORD}
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 30MB
 cfsf:
     jwt:
         secret: Codes-Files-Save-and-Forward
         expiration: 604800
+    share:
+        codeNum: 4
+    oss:
+        endpoint: ${OSS_ENDPOINT}
+        accessKeyId: ${OSS_ACCESS_KEY_ID}
+        accessKeySecret: ${OSS_ACCESS_KEY_SECRET}
+        bucketName: ${OSS_BUCKET_NAME}
 #    cors:
 #        allowedOrigins: "*"
 #        allowedMethods: "*"
